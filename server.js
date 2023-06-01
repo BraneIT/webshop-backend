@@ -30,3 +30,13 @@ pool.connect((err, client, release) => {
     release(); // Release the client back to the pool
 });
 
+app.get('/api/products', (req, res) => {
+    pool.query('SELECT * FROM products', (err, result) => {
+        if (err) {
+            console.error('Error retrieving products: ', err);
+            res.status(500).json({ error: 'An error occurred' });
+            return;
+        }
+        res.json(result.rows);
+    });
+});
