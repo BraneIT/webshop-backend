@@ -14,8 +14,8 @@ app.listen(5000, () => { console.log("server started on port 5000"); })
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: 'Branislav',
-    password: 'Mikser55',
+    user: 'webshop',
+    password: '12345678',
     host: 'localhost',
     port: 5432, // Default PostgreSQL port
     database: 'webshop',
